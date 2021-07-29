@@ -437,7 +437,7 @@ input[type="search"]::-webkit-search-results-decoration {
     justify-content: center;
     transition: transform 0.2s;
     transform: translateX(
-      100%
+      300%
     ); /* Уберем меню в левую сторону, чтобы его не было видно */
     opacity: 0;
   }
@@ -450,6 +450,10 @@ input[type="search"]::-webkit-search-results-decoration {
     cursor: pointer;
     border: none;
     background-color: #fff;
+  }
+  .is-open {
+    transform: translateX(0);
+    opacity: 1;
   }
 
   .close-icon {
@@ -517,7 +521,7 @@ input[type="search"]::-webkit-search-results-decoration {
     margin-bottom: 30px;
   }
   .swiper-container {
-    width: 370px;
+    width: 340px;
     height: 300px;
     margin: 0;
   }
@@ -561,6 +565,6 @@ input[type="search"]::-webkit-search-results-decoration {
   .content {
     margin-left: 0;
     margin-right: 0;
-    max-width: 370px;
+    max-width: 340px;
   }
 }
