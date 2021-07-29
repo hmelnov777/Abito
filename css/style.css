@@ -5,6 +5,12 @@ body {
   color: #0a143a;
 }
 
+.navbar-pannel {
+  flex-grow: 1;
+  align-items: center;
+  display: flex;
+}
+
 .container {
   max-width: 1146px;
   margin: auto;
@@ -106,7 +112,7 @@ body {
   /* создаем две колонки разного размера */
   grid-template-columns: 9fr 3fr;
   /* создаем для них "воздух" */
-  grid-column-gap: 30px;
+  grid-column-gap: 10px;
 }
 
 .card-image {
@@ -121,9 +127,9 @@ body {
   justify-content: start;
 }
 
-.card:not(:nth-child(3n)) {
+.card {
   margin-bottom: 20px;
-  margin-right: 20px;
+  margin-right: 19px;
 }
 
 .card-title {
@@ -287,10 +293,11 @@ body {
 }
 
 .author-avatar {
-  width: 50px;
-  height: 50px;
+  width: 63px;
+  height: 63px;
   object-fit: cover;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .author-name {
@@ -299,6 +306,7 @@ body {
   line-height: 16px;
   display: block;
   margin-bottom: 4px;
+  cursor: pointer;
 }
 
 .rating {
@@ -351,4 +359,208 @@ input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
   display: none;
+}
+
+.close-menu {
+  display: none;
+}
+.menu-button {
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  display: none;
+  /* отключение кнопки */
+}
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+  content {
+    max-width: 960px;
+  }
+
+  .card {
+    width: 45%;
+  }
+  .card-image {
+    width: 100%;
+    height: 190px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 720px;
+  }
+
+  .card-image {
+    height: 150px;
+  }
+
+  .button-group {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 560px;
+  }
+
+  .card {
+    width: 100%;
+  }
+  .card-image {
+    height: 200px;
+  }
+
+  .page-content {
+    grid-template-columns: 8fr 4.3fr;
+  }
+
+  .menu-button {
+    display: block;
+    /* появление кнопки */
+  }
+
+  .navbar-pannel {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 9;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+    transform: translateX(
+      100%
+    ); /* Уберем меню в левую сторону, чтобы его не было видно */
+    opacity: 0;
+  }
+
+  .close-menu {
+    display: block;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    cursor: pointer;
+    border: none;
+    background-color: #fff;
+  }
+
+  .close-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .is-open {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  .navbar-menu {
+    margin-left: auto;
+    margin-bottom: 20px;
+  }
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .menu-item:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .button-group {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (max-width: 576px) {
+  .container {
+    max-width: 90%;
+  }
+  .main-single {
+    display: block;
+  }
+  .page-content .container {
+    grid-template-columns: 12fr;
+  }
+  .page-content {
+    grid-template-columns: 12fr;
+  }
+  .card-image {
+    height: 300px;
+  }
+  .card {
+    margin-right: 0;
+  }
+  .search-button-text {
+    display: none;
+  }
+  .author-wrapper {
+    width: 100%;
+  }
+  .button-primary {
+    max-width: 100%;
+    margin-left: 0;
+  }
+  .button-success {
+    margin-left: 0;
+    max-width: 100%;
+  }
+  .content-text {
+    max-width: 350;
+    margin-bottom: 30px;
+  }
+  .swiper-container {
+    width: 370px;
+    height: 300px;
+    margin: 0;
+  }
+
+  .swiper-slide {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .mySwiper2 {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+
+  .mySwiper {
+    height: 20%;
+    box-sizing: border-box;
+    padding: 10px 0;
+    border-radius: 10px;
+  }
+
+  .mySwiper .swiper-slide {
+    width: 25%;
+    height: 100%;
+    opacity: 0.4;
+  }
+
+  .mySwiper .swiper-slide-thumb-active {
+    opacity: 1;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .content {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 370px;
+  }
 }
